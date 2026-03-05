@@ -4,6 +4,7 @@ from config import SESSIONS_DIR
 from services.image_processor import compose_layout
 from services.printer_service import print_photo
 from services.qr_service import create_qr
+from services.gif_service import create_gif
 
 
 class SessionManager:
@@ -30,10 +31,14 @@ class SessionManager:
 
     def process_session(self):
 
-        output = self.session_dir / "final.jpg"
+        final = self.session_dir / "final.jpg"
 
-        compose_layout(self.photos, output)
+        compose_layout(self.photos, final)
 
-        print_photo(output)
+        gif_path = self.session_dir / "preview.gif"
 
-        create_qr(output)
+        create_gif(self.photos, gif_path)
+
+        print_photo(final)
+
+        create_qr(final)

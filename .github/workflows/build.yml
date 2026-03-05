@@ -1,4 +1,4 @@
-name: Build PhotoBooth
+name: Build PhotoBooth macOS
 
 on:
   push:
@@ -12,28 +12,29 @@ jobs:
 
     steps:
 
-    - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: "3.11"
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
 
-    - name: Install deps
-      run: |
-        pip install -r requirements.txt
-        pip install pyinstaller
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
 
-    - name: Build app
-      run: |
-        pyinstaller \
-        --windowed \
-        --target-arch universal2 \
-        --name PhotoBooth \
-        app/main.py
+      - name: Build macOS App
+        run: |
+          pyinstaller \
+            --windowed \
+            --target-arch universal2 \
+            --name PhotoBooth \
+            app/main.py
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: PhotoBooth
-        path: dist/PhotoBooth.app
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: PhotoBooth-mac
+          path: dist/PhotoBooth.app
