@@ -11,7 +11,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -20,10 +19,19 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Set environment variables for universal build
+        run: |
+          echo "ARCHFLAGS='-arch x86_64 -arch arm64'" >> $GITHUB_ENV
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
           pip install pyinstaller
+
+      - name: Reinstall watchdog as universal2
+        run: |
+          pip uninstall -y watchdog
+          ARCHFLAGS="-arch x86_64 -arch arm64" pip install --no-binary=:all: watchdog
 
       - name: Build macOS App
         run: |
