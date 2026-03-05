@@ -23,6 +23,12 @@ jobs:
         run: |
           echo "ARCHFLAGS='-arch x86_64 -arch arm64'" >> $GITHUB_ENV
 
+      - name: Uninstall any existing Pillow
+        run: pip uninstall -y pillow
+
+      - name: Install Pillow as universal2
+        run: ARCHFLAGS="-arch x86_64 -arch arm64" pip install --no-binary=:all: pillow
+
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
