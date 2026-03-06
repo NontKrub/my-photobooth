@@ -1,0 +1,98 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #0d0d1a;
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.counter {
+  font-size: 1rem;
+  color: #6c63ff;
+  font-weight: 600;
+}
+
+.previewWrapper {
+  position: relative;
+  width: min(90vw, 720px);
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+}
+
+.flash {
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  animation: flashAnim 0.3s ease-out forwards;
+  z-index: 20;
+}
+
+@keyframes flashAnim {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.processingOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  z-index: 15;
+}
+
+.strip {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumb {
+  width: 100px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #333;
+  transition: border-color 0.2s;
+}
+
+.thumb:last-child {
+  border-color: #6c63ff;
+}
+
+.captureBtn {
+  padding: 1rem 3rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #6c63ff, #e96cff);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(108, 99, 255, 0.4);
+  transition: transform 0.15s;
+}
+
+.captureBtn:hover {
+  transform: scale(1.05);
+}
