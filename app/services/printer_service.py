@@ -1,8 +1,11 @@
 import subprocess
-from config import PRINTER_NAME
+from config import PRINTER_NAME, MOCK_PRINTER
 
 
 def print_photo(file):
+    if MOCK_PRINTER:
+        print(f"[mock] Skipping print for {file}")
+        return
 
     subprocess.run(
         [
