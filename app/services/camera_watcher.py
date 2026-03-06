@@ -1,6 +1,6 @@
-import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+from config import INPUT_DIR
 
 
 class Handler(FileSystemEventHandler):
@@ -35,6 +35,6 @@ class CameraWatcher:
 
         handler = Handler(self.manager, self.callback)
 
-        self.observer.schedule(handler, ".", recursive=False)
+        self.observer.schedule(handler, str(INPUT_DIR), recursive=False)
 
         self.observer.start()
