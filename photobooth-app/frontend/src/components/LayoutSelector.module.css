@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 16px;
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: border-color 0.2s, transform 0.2s;
+  min-width: 140px;
+}
+
+.card:hover {
+  border-color: #6c63ff;
+  transform: translateY(-3px);
+}
+
+.card.active {
+  border-color: #6c63ff;
+  background: #16213e;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.4);
+}
+
+.gridPreview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gridRow {
+  display: flex;
+  gap: 4px;
+}
+
+.gridCell {
+  width: 28px;
+  height: 22px;
+  background: #6c63ff;
+  border-radius: 3px;
+  opacity: 0.7;
+}
+
+.card.active .gridCell {
+  opacity: 1;
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: #aaa;
+}

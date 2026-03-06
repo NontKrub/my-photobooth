@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+*.egg
+
+# Database files generated at runtime
+photobooth-app/storage/photobooth.db
+
+# Node / frontend
+photobooth-app/frontend/node_modules/
+photobooth-app/frontend/dist/
+
+# macOS
+.DS_Store

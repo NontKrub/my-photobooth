@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.collageWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.collage {
+  max-width: min(90vw, 700px);
+  border-radius: 12px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.download {
+  display: inline-block;
+  padding: 0.6rem 1.6rem;
+  background: #6c63ff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.download:hover { background: #5548e0; }
+
+.strip {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumb {
+  width: 140px;
+  height: 105px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+.resetBtn {
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #6c63ff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.resetBtn:hover {
+  background: #5548e0;
+  transform: scale(1.04);
+}

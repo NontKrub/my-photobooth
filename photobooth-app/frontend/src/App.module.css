@@ -1,0 +1,30 @@
+.app {
+  position: relative;
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #fff;
+}
+
+.errorBanner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #c0392b;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.errorBanner button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0 0.4rem;
+}

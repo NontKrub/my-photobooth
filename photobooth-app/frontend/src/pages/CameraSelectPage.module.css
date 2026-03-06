@@ -1,0 +1,83 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+  background: #0d0d1a;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.status {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.error {
+  color: #ff6b6b;
+  font-size: 1rem;
+}
+
+.grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: border-color 0.2s, transform 0.2s;
+  min-width: 180px;
+}
+
+.card:hover:not(:disabled) {
+  border-color: #6c63ff;
+  transform: translateY(-4px);
+}
+
+.card:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.card.loading {
+  border-color: #e96cff;
+  animation: blink 0.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+.icon {
+  font-size: 2.5rem;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: #888;
+}
