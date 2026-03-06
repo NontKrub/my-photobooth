@@ -5,7 +5,7 @@ database.py – SQLite persistence for session metadata.
 import logging
 import sqlite3
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -72,7 +72,7 @@ def get_all_sessions() -> List[Dict[str, Any]]:
     return [dict(r) for r in rows]
 
 
-def get_session(session_id: str) -> Dict[str, Any] | None:
+def get_session(session_id: str) -> Optional[Dict[str, Any]]:
     """Return a single session by its session_id, or None."""
     conn = _connect()
     row = conn.execute(

@@ -30,8 +30,11 @@ PREVIEW_JPEG_QUALITY = 80
 # ── Printer ─────────────────────────────────────────────────────────────────
 PRINTER_NAME = "Canon_SELPHY_CP1500"
 
+import os
+
 # ── QR / sharing ─────────────────────────────────────────────────────────────
-DOMAIN = "https://pb.nakrub.me"
+# Override via the PHOTOBOOTH_DOMAIN environment variable when deploying.
+DOMAIN = os.getenv("PHOTOBOOTH_DOMAIN", "http://localhost:8000")
 
 
 def ensure_dirs() -> None:

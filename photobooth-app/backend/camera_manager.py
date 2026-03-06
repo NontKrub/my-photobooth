@@ -55,7 +55,7 @@ class CameraManager:
             h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
             backend = cap.getBackendName()
             cap.release()
-            name = "Built-in Camera (FaceTime HD)" if idx == 0 else f"USB Camera {idx}"
+            name = "Built-in / Primary Camera" if idx == 0 else f"USB Camera {idx}"
             cameras.append(
                 {
                     "id": f"opencv_{idx}",
